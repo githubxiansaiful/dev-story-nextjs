@@ -1,4 +1,5 @@
-import { ArrowLeft, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, PlayCircle, ShoppingCart } from 'lucide-react';
+import { Play } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -79,24 +80,13 @@ const page = async ({ params }) => {
                     </div>
 
                     {/* Video Section */}
-                    {/* {videoId && (
-                        <div className="bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow">
-                            <div className="p-6 border-b dark:border-gray-800 flex items-center gap-3">
-                                <Play className="w-6 h-6 text-red-600" />
-                                <h3 className="font-semibold text-lg">Watch Recipe Video</h3>
-                            </div>
-                            <div className="aspect-video">
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src={`https://www.youtube.com/embed/${videoId}`}
-                                    title="Recipe Video"
-                                    allowFullScreen
-                                    className="rounded-b-3xl"
-                                />
-                            </div>
+
+                    <div className="bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow">
+                        <div className="p-6  dark:border-gray-800 flex items-center gap-3">
+                            <PlayCircle className="w-6 h-6 text-red-600" />
+                            <h3 className="font-semibold text-lg">Watch Recipe Video</h3>
                         </div>
-                    )} */}
+                    </div>
                 </div>
             </div>
         </div>
