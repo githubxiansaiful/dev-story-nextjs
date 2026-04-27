@@ -6,8 +6,9 @@ const getFoods = async () => {
     return data.foods || [];
 };
 
-const page = () => {
+const page = async () => {
     const foods = await getFoods();
+    console.log(foods)
     return (
         <div>page</div>
     )
