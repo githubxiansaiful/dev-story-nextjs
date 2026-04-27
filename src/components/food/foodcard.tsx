@@ -6,7 +6,7 @@ import { ShoppingCart, Eye } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function FoodCard({ food, onAddToCart, onViewDetails }: FoodCardProps) {
+export default function FoodCard({ food }) {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const { id, foodImg, category, price } = food;
@@ -48,19 +48,16 @@ export default function FoodCard({ food, onAddToCart, onViewDetails }: FoodCardP
             <div className="px-5 pb-5 flex gap-3">
                 <button
                     onClick={() => onAddToCart?.(food)}
-                    className="flex-1 bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200"
+                    className="flex-1 text-sm bg-orange-600 hover:bg-orange-700 active:bg-orange-800 text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200"
                 >
                     <ShoppingCart className="w-5 h-5" />
                     Add to Cart
                 </button>
 
-                <button
-                    onClick={() => onViewDetails?.(food)}
-                    className="flex-1 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200"
-                >
+                <Link href={`/food/${id}`} className="flex-1 text-sm border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200" >
                     <Eye className="w-5 h-5" />
                     Details
-                </button>
+                </Link>
             </div>
         </div>
     );
