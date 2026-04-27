@@ -10,7 +10,7 @@ const page = async () => {
     const foods = await getFoods();
     console.log(foods)
     return (
-        <div>page</div>
+        <div>{foods.length} total foods</div>
     )
 }
 
