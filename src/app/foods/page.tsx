@@ -1,3 +1,4 @@
+import FoodCard from '@/components/food/foodcard';
 import React from 'react'
 
 const getFoods = async () => {
@@ -15,11 +16,11 @@ const page = async () => {
                 <h1 className='font-bold text-3xl'>All {foods.length} Foods</h1>
             </div>
             <div>
-                {foods.map((food) => {
-                    <div key={catId}>
-
-                    </div>
-                })}
+                {
+                    foods.map((food) => (
+                        <FoodCard key={food.id} food={food}></FoodCard>
+                    ))
+                }
             </div>
         </div>
     )
