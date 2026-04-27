@@ -9,7 +9,6 @@ const getFoods = async () => {
 
 const page = async () => {
     const foods = await getFoods();
-    console.log(foods)
     return (
         <div>
             <div className='text-center bg-purple-500 text-white py-10'>
