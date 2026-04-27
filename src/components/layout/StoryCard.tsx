@@ -24,7 +24,7 @@ export default function StoryCard({ story }) {
 
             {/* Button */}
             <Link
-                href={`/stories/${story.id}`}
+                href={`/devstory/${story.id}`}
                 className="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded-md text-sm"
             >
                 Read Full Story
