@@ -4,36 +4,27 @@
 import Image from 'next/image';
 import { ShoppingCart, Eye } from 'lucide-react';
 import { useState } from 'react';
-
-interface FoodItem {
-    id: number;
-    title: string;
-    foodImg: string;
-    price: number;
-    category: string;
-}
-
-interface FoodCardProps {
-    food: FoodItem;
-    onAddToCart?: (food: FoodItem) => void;
-    onViewDetails?: (food: FoodItem) => void;
-}
+import Link from 'next/link';
 
 export default function FoodCard({ food, onAddToCart, onViewDetails }: FoodCardProps) {
     const [imageLoaded, setImageLoaded] = useState(false);
+
+    const { id, foodImg, category, price } = food;
 
     return (
         <div className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
             {/* Image Container */}
             <div className="relative h-52 overflow-hidden">
-                <Image
-                    src={food.foodImg}
-                    alt={food.title}
-                    fill
-                    className={`object-cover transition-transform duration-500 group-hover:scale-110 ${imageLoaded ? 'opacity-100' : 'opacity-0'
-                        }`}
-                    onLoadingComplete={() => setImageLoaded(true)}
-                />
+                <Link href={`/food/${id}`}>
+                    <Image
+                        src={food.foodImg}
+                        alt={food.title}
+                        fill
+                        className={`object-cover transition-transform duration-500 group-hover:scale-110 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                            }`}
+                        onLoadingComplete={() => setImageLoaded(true)}
+                    />
+                </Link>
 
                 {/* Category Badge */}
                 <div className="absolute top-4 right-4 bg-black/70 text-white text-xs font-medium px-3 py-1 rounded-full backdrop-blur-md">
