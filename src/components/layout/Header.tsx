@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import Navlinks from './Navlinks';
 
 export default function Header() {
     const pathname = usePathname();
@@ -14,13 +15,10 @@ export default function Header() {
                 </div>
                 <div>
                     <ul className='flex gap-5'>
-                        <li><Link href="/">Home</Link></li>
-                        <li>
-                            <Link href="/dashboard">Dashboard</Link>
-                        </li>
-                        <li>
-                            <Link href="/devstory">DevStory</Link>
-                        </li>
+                        <Navlinks href="/dashboard">Dashboard</Navlinks>
+                        <Navlinks href="/devstory">DevStory</Navlinks>
+                        <Navlinks href="/Login">Login</Navlinks>
+                        <Navlinks href="/contact">Contact</Navlinks>
                     </ul>
                 </div>
             </div>
