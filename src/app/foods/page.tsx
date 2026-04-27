@@ -10,9 +10,16 @@ const page = async () => {
     const foods = await getFoods();
     console.log(foods)
     return (
-        <div>{foods.length} total foods
-            <div className='text-center'>
-                <h1 className='font-bold text-3xl'>All Foods</h1>
+        <div>
+            <div className='text-center bg-purple-500 text-white py-10'>
+                <h1 className='font-bold text-3xl'>All {foods.length} Foods</h1>
+            </div>
+            <div>
+                {foods.map((food) => {
+                    <div key={catId}>
+
+                    </div>
+                })}
             </div>
         </div>
     )
