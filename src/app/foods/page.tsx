@@ -7,6 +7,7 @@ const getFoods = async () => {
 };
 
 const page = () => {
+    const foods = await getFoods();
     return (
         <div>page</div>
     )
