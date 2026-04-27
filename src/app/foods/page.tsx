@@ -15,7 +15,7 @@ const page = async () => {
             <div className='text-center bg-purple-500 text-white py-10'>
                 <h1 className='font-bold text-3xl'>All {foods.length} Foods</h1>
             </div>
-            <div>
+            <div className='grid grid-cols-3 gap-6 p-10'>
                 {
                     foods.map((food) => (
                         <FoodCard key={food.id} food={food}></FoodCard>
