@@ -15,7 +15,7 @@ export default function FoodCard({ food }) {
         <div className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
             {/* Image Container */}
             <div className="relative h-52 overflow-hidden">
-                <Link href={`/food/${id}`}>
+                <Link href={`/foods/${id}`}>
                     <Image
                         src={food.foodImg}
                         alt={food.title}
@@ -54,7 +54,7 @@ export default function FoodCard({ food }) {
                     Add to Cart
                 </button>
 
-                <Link href={`/food/${id}`} className="flex-1 text-sm border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200" >
+                <Link href={`/foods/${id}`} className="flex-1 text-sm border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200" >
                     <Eye className="w-5 h-5" />
                     Details
                 </Link>
