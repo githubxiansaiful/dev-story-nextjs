@@ -17,6 +17,7 @@ export default function Header() {
                     <ul className='flex gap-5'>
                         <Navlinks href="/dashboard">Dashboard</Navlinks>
                         <Navlinks href="/devstory">DevStory</Navlinks>
+                        <Navlinks href="/foods">Foods</Navlinks>
                         <Navlinks href="/Login">Login</Navlinks>
                         <Navlinks href="/contact">Contact</Navlinks>
                     </ul>
