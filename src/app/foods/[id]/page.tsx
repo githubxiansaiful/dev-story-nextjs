@@ -13,6 +13,9 @@ const getSingleFood = async (id) => {
 const page = async ({ params }) => {
     const { id } = await params;
     const food = await getSingleFood(id);
+    if (!food) {
+        return <h2>Food not found!</h2>
+    }
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-950 pb-12">
             {/* Back Button */}
@@ -74,7 +77,7 @@ const page = async ({ params }) => {
                     <div className="bg-white dark:bg-gray-900 p-6 rounded-3xl shadow">
                         <h3 className="font-semibold text-lg mb-4">About this dish</h3>
                         <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            A delicious {food.category.toLowerCase()} dish from {food.area}.
+                            A delicious  dish from {food.category} {food.area}.
                             Perfect for food lovers looking for authentic flavors.
                         </p>
                     </div>
